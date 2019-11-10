@@ -10,6 +10,8 @@ class AlumnusController < ApplicationController
 
   # GET /alumnus/1
   def show
+
+    alumnu = Alumnu.find(params[:id])
     render json: @alumnu
   end
 
@@ -26,6 +28,8 @@ class AlumnusController < ApplicationController
 
   # PATCH/PUT /alumnus/1
   def update
+      alumnu = Alumnu.find(params[:id])
+
     if @alumnu.update(alumnu_params)
       render json: @alumnu
     else
@@ -35,7 +39,15 @@ class AlumnusController < ApplicationController
 
   # DELETE /alumnus/1
   def destroy
-    @alumnu.destroy
+
+   alumnu = Alumnu.find(params[:id])
+
+
+    if @alumnu.destroy
+      render json: alumni.id
+    else
+      render json: @alumnu.errors, status: :unprocessable_entity
+    end
   end
 
   private
