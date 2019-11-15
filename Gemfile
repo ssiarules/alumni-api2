@@ -7,7 +7,7 @@ ruby '2.3.7'
 gem 'rails', '~> 5.2.3'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
-
+gem 'pry'
 # use PostgreSQL
 #gem 'pg', '~> 1.1.4'
 
