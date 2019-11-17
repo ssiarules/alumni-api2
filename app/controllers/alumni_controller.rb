@@ -1,5 +1,5 @@
 class AlumniController < ApplicationController
-  before_action :set_alumnu, only: [:show, :update, :destroy]
+  #before_action :set_alumni, only: [:show, :update, :destroy]
 
   # GET /alumnis
   def index
@@ -12,7 +12,7 @@ class AlumniController < ApplicationController
   def show
 
     alumni = Alumni.find(params[:id])
-    render json: @alumni
+    render json: alumni
   end
 
   # POST /alumnis
@@ -31,28 +31,27 @@ class AlumniController < ApplicationController
   def update
       alumni = Alumni.find(params[:id])
 
-    if @alumni.update(alumni_params)
-      render json: @alumni
+    if alumni.update(alumni_params)
+      render json: alumni
     else
-      render json: @alumni.errors, status: :unprocessable_entity
+      render json: {status: 500, message: 'Alumni cannot be updated'}
     end
   end
 
   # DELETE /alumnis/1
   def destroy
-
    alumni = Alumni.find(params[:id])
 
 
-    if @alumni.destroy
+    if alumni.destroy
       render json: alumni.id
     else
-      render json: @alumni.errors, status: :unprocessable_entity
+      render json: {status: 500, message: 'Alumni cannot be deleted'}
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
+     #Use callbacks to share common setup or constraints between actions.
     def set_alumni
       @alumni = Alumni.find(params[:id])
     end
