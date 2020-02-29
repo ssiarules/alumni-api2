@@ -12,7 +12,7 @@ gem 'pry'
 #gem 'pg', '~> 1.1.4'
 
 # Use Puma as the app server
-gem 'puma', '~> 3.11'
+gem 'puma', '~> 3.12'
 #Use Cors as secure URL
 gem 'rack-cors'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
