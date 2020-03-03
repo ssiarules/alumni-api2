@@ -1,5 +1,5 @@
 class AlumniController < ApplicationController
-  #before_action :set_alumni, only: [:show, :update, :destroy]
+  before_action :set_alumni, only: [:show, :update, :destroy]
 
   # GET /alumnis
   def index
@@ -21,9 +21,9 @@ class AlumniController < ApplicationController
     #binding.pry
 
     if @alumni.save
-      render json: @alumni, status: :created, location: @alumni
+      render json: @alumni
     else
-      render json: @alumni.errors, status: :unprocessable_entity
+      render json: {status: 500, message: 'Alumni cannot be created'}
     end
   end
 
