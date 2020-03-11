@@ -12,6 +12,6 @@
     resource '*',
        headers: :any,
        methods: [:get, :post, :put, :patch, :delete, :options, :head, :update],
-       crendentails: true 
+       crendentails: true
    end
  end
